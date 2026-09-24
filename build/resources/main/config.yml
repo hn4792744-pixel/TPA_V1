@@ -1,0 +1,114 @@
+# ================================================================
+# ULTRAS_TPA 1.0.0
+# من صنع: UC_Hussein
+# ================================================================
+# هذا الملف مصمم ليكون قابلاً للتخصيص. بعد أي تعديل استخدم /tpa reload
+# ملاحظة: الزمن بالثواني ما لم يذكر غير ذلك.
+
+plugin:
+  name: "ULTRAS_TPA"
+  version: "1.0.0"
+  author: "UC_Hussein"
+  created-date: "2026-09-25"
+  default-language: "en"
+
+settings:
+  request-cooldown-seconds: 60
+  request-expiration-seconds: 60
+  teleport-delay-seconds: 3
+  cancel-teleport-on-move: true
+  move-threshold-blocks: 0.01
+  op-bypass-cooldown: true
+  op-bypass-world-block: false
+  allow-self-request: false
+  allow-tpa-all: true
+  gui-enabled: true
+  gui-page-size: 21
+  open-gui-on-request: true
+  chat-request-open-button: true
+  sounds-enabled: true
+  particles-enabled: true
+  teleport-safe-location: true
+
+# نظام منع TPA بالكامل في عوالم محددة.
+# إذا وضعت اسم العالم هنا فلن يستطيع اللاعب إرسال/قبول/رفض/إلغاء أي طلب فيه.
+worlds:
+  disabled-worlds: []
+
+# كل لاعب يستطيع التحكم بهذه الإعدادات بنفسه من الأوامر.
+player-defaults:
+  receive-tpa: true
+  receive-tpahere: true
+  receive-tpa-all: true
+  auto-accept: false
+  open-gui-on-request: true
+
+# شكل الواجهة الصغيرة.
+gui:
+  title: "&8ULTRAS MC &7• &bTPA"
+  selector-title: "&8ULTRAS MC &7• &bاللاعبون"
+  profile-title: "&8ULTRAS MC &7• &bملف اللاعب"
+  request-title: "&8ULTRAS MC &7• &bطلب انتقال"
+  size: 27
+  selector-size: 27
+  profile-size: 27
+  request-size: 27
+  previous-slot: 18
+  next-slot: 26
+  back-slot: 22
+  accept-slot: 11
+  deny-slot: 15
+  block-slot: 13
+  player-slots: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20,21]
+
+# الألوان تستخدم & مثل Minecraft.
+colors:
+  prefix: "&4&lULTRAS &c&lMC &8| "
+  accent: "&b"
+  player: "&d"
+  success: "&a"
+  error: "&c"
+  warning: "&e"
+  info: "&7"
+  muted: "&8"
+
+# أنواع الدعوات.
+request-types:
+  tpa: "TPA"
+  tpahere: "TPAHERE"
+  tpa-all: "TPA ALL"
+
+# أسماء العوالم في الواجهة والرسائل تعتمد على اسم العالم الحقيقي.
+format:
+  coordinates: "X: %x%  Y: %y%  Z: %z%"
+  player-info: "%player% &8• &7%world% &8• &f%coordinates%"
+
+logging:
+  enabled: true
+  file-name: "actions.log"
+  log-requests: true
+  log-accepts: true
+  log-denies: true
+  log-cancels: true
+  log-teleports: true
+  log-settings: true
+  log-errors: true
+
+# =========================
+# ملاحظات الأوامر
+# =========================
+# /tpa                 يفتح واجهة اختيار اللاعبين
+# /tpa <player>        يرسل TPA
+# /tpa all             يرسل TPA ALL لكل اللاعبين المسموح لهم
+# /tpahere <player>    يطلب من اللاعب الانتقال إليك
+# /tpa accept          يفتح واجهة آخر دعوة
+# /tpa deny            يفتح واجهة آخر دعوة
+# /tpa cancel [player] يلغي آخر طلب أو طلباً لشخص محدد
+# /tpa toggle          تشغيل/تعطيل استقبال TPA
+# /tpa togglehere      تشغيل/تعطيل استقبال TPAHERE
+# /tpa toggleall       تشغيل/تعطيل استقبال TPA ALL
+# /tpa auto            تشغيل/تعطيل القبول التلقائي
+# /tpa gui             تشغيل/تعطيل فتح GUI عند وصول الدعوة
+# /tpa block <player>  منع لاعب محدد
+# /tpa unblock <player> رفع المنع
+# /tpa reload           OP فقط

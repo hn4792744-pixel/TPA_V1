@@ -1,0 +1,28 @@
+name: ULTRAS_TPA
+version: 1.0.0
+main: me.uc_hussein.ultrastpa.ULTRASTPAPlugin
+author: UC_Hussein
+description: "Elegant, configurable TPA system for Paper servers."
+api-version: '1.21'
+folia-supported: false
+commands:
+  tpa:
+    description: "ULTRAS_TPA main command"
+    usage: "/tpa [player|all|accept|deny|cancel|toggle|togglehere|toggleall|auto|block|unblock|reload]"
+    aliases: [tpa]
+  tpahere:
+    aliases: [toahere]
+    description: "Request a player to teleport to you"
+  tpaccept:
+    description: "Accept the latest TPA request"
+  tpdeny:
+    description: "Deny the latest TPA request"
+  tpcancel:
+    description: "Cancel a TPA request"
+permissions:
+  ultrastpa.admin:
+    description: "Access to ULTRAS_TPA reload and admin features"
+    default: op
+  ultrastpa.use:
+    description: "Use ULTRAS_TPA"
+    default: true
